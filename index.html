@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Enviar vídeos do youtube</title>
+        <meta charset="UTF-8"/>
+    </head>
+
+    <body>
+
+        <form method="POST" action="enviar.php" enctype="multipart/form-data">
+
+            <label for="titulo">
+                Título:
+                <input type="text" name="titulo" id="titulo" maxlength="30" required/>
+            </label>
+
+            <br>
+
+            <textarea name="desc" placeholder="Descrição do vídeo">
+            </textarea>
+
+            <br>
+
+            <input type="file" name="video" accept="video/mp4,application/mp4" required/>
+
+            <br><br>
+
+            <input type="submit" value="Enviar"/>
+
+        </form>
+
+    </body>
+
+</html>
