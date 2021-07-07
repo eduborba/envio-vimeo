@@ -1,14 +1,5 @@
 {
     "require": {
-        "vimeo/vimeo-api": "^3.0",
-        "google/apiclient": "^2.7"
-    },
-    "scripts": {
-        "post-update-cmd": "Google\\Task\\Composer::cleanup"
-    },
-    "extra": {
-        "google/apiclient-services": [
-            "YouTube"
-        ]
+        "vimeo/vimeo-api": "^3.0"
     }
 }
