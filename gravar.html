@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Gravar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <video class="ws-preview" autoplay></video>
+
+        <label for="nomeAula">
+            Nome da aula
+            <input type="text" id="nomeAula" maxlength="60" />
+        </label>
+
+        <div class="controllers">
+
+            <label for="listaFormatos">
+                Formato de gravação
+                <select id="listaFormatos">
+                    <option>Nenhum formato suportado</option>
+                </select>
+            </label>
+
+            <button id="btnIniciaGravacao">Iniciar gravação</button>
+            <button id="btnEncerraGravacao">Encerra gravação</button>
+            <button id="btnDownload">Download</button>
+
+        </div>
+
+    </main>
+
+    <script type="text/javascript" src="jscs.min.js"></script>
+    <script>
+
+        const recorder = new WSCRecorder('#nomeAula', 'gravar.php');
+        recorder.setVideoPreview('.ws-preview');
+        recorder.setControllers({
+            startRecord: '#btnIniciaGravacao',
+            stopRecord: '#btnEncerraGravacao',
+            btnDownload: '#btnDownload',
+            formatSelect: '#listaFormatos'
+        });
+
+        recorder.init();
+
+    </script>
+
+</body>
+
+</html>

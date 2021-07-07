@@ -12,7 +12,7 @@ $video_uri = $vimeo->upload($_FILES['video']['tmp_name'], array(
     'name' => $_POST['titulo'],
     'description' => $_POST['desc'],
     'privacy' => [
-        'view' => 'nobody'
+        'view' => 'anybody'
     ],
 ));
 
