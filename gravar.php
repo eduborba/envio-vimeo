@@ -18,8 +18,8 @@ $video_uri = $vimeo->upload($_FILES['data']['tmp_name'], array(
     ],
 )); 
 
+$upload_status = $vimeo->request($video_uri . '?fields=transcode.status');
 $video_resp = $vimeo->request($video_uri . '?fields=link');
 $video_url = $video_resp['body']['link'];
 
-echo $video_url;
-
+echo "URL Vídeo: {$video_url} Status: ${$upload_status['body']['transcode']['status']}";
