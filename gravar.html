@@ -68,7 +68,7 @@
     <script type="text/javascript" src="jscs.min.js"></script>
     <script>
 
-        const recorder = new WSCRecorder('enviar.php');
+        const recorder = new WSCRecorder('enviar.php', false);
         recorder.setVideoPreview('.ws-preview');
         recorder.setControllers({
             prepare: '#btnPrepara',
@@ -79,6 +79,12 @@
             recorderIndicator: '#recorderIndicator',
             timer: '#timer'
         });
+
+        const params = new Map();
+        params.set('param1', 'sdasdassd');
+        params.set('param2', 'asdasdaa');
+
+        recorder.addPostParams(params);
 
         recorder.addUploadCallback((response) => {
 
